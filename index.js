@@ -11,7 +11,14 @@ const app = express();
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+
+// CORS configuration
+// CORS configuration
+app.use(cors({
+    origin: '*', // Allow requests from all origins
+    credentials: true, // Allow sending cookies
+}));
+
 
 // Routes
 app.use('/auth', authRoute);
