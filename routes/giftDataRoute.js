@@ -26,7 +26,7 @@ function isAdmin(req, res, next) {
 
 
 // Routes for gift data
-router.post('/', verifyToken, giftDataController.createGiftData); // Protect the route with verifyToken middleware
+router.post('/', giftDataController.createGiftData); // Protect the route with verifyToken middleware
 router.get('/', isAdmin, verifyToken, giftDataController.getAllGiftData); // Protect the route with isAdmin middleware
 router.get('/:id', verifyToken, giftDataController.getGiftDataById); // Protect the route with verifyToken middleware
 router.put('/:id', verifyToken, giftDataController.updateGiftData); // Protect the route with verifyToken middleware
